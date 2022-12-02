@@ -184,9 +184,14 @@ ENCRYPTION_KEY_HASH: bytes      = read_file_bytes(DIR_PATH + "/key_hash.txt")
 
 def main():
     '''
-    Main entrypoint in program
+    Main entrypoint in program. 
+    Asks user for if they want to encrypt or decrypt a folder
+    Then asks them for the key. The user inputted key gets hashed and compared with a stored hash
+    If they match then the key is valid and we proceed to decrypt/encrypt the files using the unhashed key inputted by user
+    Encryption uses a Fermat object and uses this to encrpyt both the filenames and the file contents
+    I add a .encrypted extension so when decrypting I can filter only files that need decrypting.
     '''
-    option: str = input_validate(print_string = "(d)ecode or (e)ncode: ", 
+    option: str = input_validate(print_string = "(d)ecrypt or (e)ncrypt: ", 
                                 validInputs  = ["d", "e"])
 
     key: bytes    = str.encode(input_validate(print_string = "Enter Key: ", 
