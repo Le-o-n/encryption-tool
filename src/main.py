@@ -177,7 +177,7 @@ DIR_PATH: str                   = os.path.dirname(os.path.realpath(__file__))
 TARGET_PATH: str                = DIR_PATH + "/../target/"
 FUNC_MAP: dict                  = {"e": encrypt_files, "d": decrypt_files}
 ENCRYPTED_EX                    = b".encrypted"
-ENCRYPTION_KEY                  = b"jpM6DUtu__ySm4CK78w79BLvspPOAWaWnZqtU-Vkcsg="
+ENCRYPTION_KEY                  = b"jpM6DUtu__ySm4CK78w79BLvspPOAWaWnZqtU-Vkcsg=" # THIS WON'T BE STORED HERE NORMALLY, JUST HERE SO I DON'T LOSE IT #
 ENCRYPTION_KEY_HASH: bytes      = read_file_bytes(DIR_PATH + "/key_hash.txt")
 
 
