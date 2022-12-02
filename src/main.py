@@ -67,7 +67,6 @@ def hash_md5(string: bytes) -> bytes:
     '''
     return hashlib.md5(string.decode("utf-8").encode("utf-8") ).digest()
 
-
 def decrypt(en_path: str, key: bytes)-> bool:
     '''
     Overview:
@@ -131,8 +130,6 @@ def encrypt(path: str, key: bytes)-> bool:
     
     return True
 
-    
-
 def decrypt_files(file_paths: list, key: bytes) -> bool:
     '''
     Overview:
@@ -151,9 +148,6 @@ def decrypt_files(file_paths: list, key: bytes) -> bool:
             print(f"successfully decryptd {path}")
         else:
             print(f"error while decoding  {path}")
-
-
-
 
     return True
 
@@ -175,9 +169,6 @@ def encrypt_files(file_paths: list, key: bytes) -> bool:
             print(f"successfully encryptd {path}")
         else:
             print(f"error while encoding  {path}")
-
-
-
 
     return True
 
@@ -203,15 +194,11 @@ def main():
                                 validFunc    = hash_md5))
 
     
-    
     file_paths: list = collect_all_file_paths(TARGET_PATH)  
 
     options_func = FUNC_MAP[option]
     options_func(file_paths, key)
     
-   
-
-
-
+  
 if __name__ == "__main__":
     main()
